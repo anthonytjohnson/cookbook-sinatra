@@ -8,5 +8,11 @@ configure :development do
 end
 
 get '/' do
-  'Hello world!'
+  erb :index
 end
+
+<ul>
+  <% LANGUAGES.each do |name, short_name| %>
+    <li><%= link_to name, "/#{short_name}/" %></li>
+  <% end %>
+</ul>
